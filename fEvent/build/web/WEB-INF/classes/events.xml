@@ -1,0 +1,27 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: MacOS -->
+ 
+<struts>
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="default" extends="struts-default" >
+
+        <action name="createEvent" class="app.EventsActionSupport" method="action3">
+            <result name="success">/viewevent.jsp</result>
+            
+        </action>
+        
+        <action name="pagecreate" class="app.EventsActionSupport" method="actionlist">
+            <result name="success">/newevent.jsp</result>
+        </action>
+        
+        
+        <action name="listview" class="app.EventsActionSupport" method="action1">
+            <result name="success">/viewevent.jsp</result>
+        </action>
+       
+    </package>
+</struts>

@@ -1,0 +1,11 @@
+iconnectdb\idao\AccountDAO.class
+iconnectdb\idao\ContactDAO.class
+servletcontroller\ContactServlet.class
+iconnectdb\DbContext.class
+controller\icontact\iContact.class
+dao\MicrosoftContactDAO.class
+iconnectdb\DAOFactory.class
+iconnectdb\MicrosoftDAOFactory.class
+controller\ContactController.class
+dao\MicrosoftAccountDAO.class
+dto\Contact.class

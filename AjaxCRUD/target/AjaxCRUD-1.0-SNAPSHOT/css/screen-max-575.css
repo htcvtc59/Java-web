@@ -1,0 +1,9 @@
+body{
+    background-color: crimson
+}
+
+@media(orientation:landscape){
+    body{
+        background-color: orange
+    }  
+}
