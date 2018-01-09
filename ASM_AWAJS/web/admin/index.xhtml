@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="Username Email:" />
+                <h:inputText id="email" value="#{loginBean.user}">
+                    <f:validator validatorId="validator.LoginValidator" />
+                </h:inputText>
+                <h:message for="email" style="color:red" />
+            </h:panelGrid>
+            <h:panelGrid>
+                <h:outputLabel value="Password:"/>
+                <h:inputSecret id="pass" required="true" value="#{loginBean.pass}" >
+                    <f:validator validatorId="validator.LoginPassValidator" />
+                </h:inputSecret>
+                <h:message for="pass" style="color:red" />
+            </h:panelGrid>
+
+            <h:commandButton value="Login" action="#{loginBean.login()}" />
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="default" extends="struts-default" >
+
+        <action name="createContact" class="app.ContactActionSupport" method="action3">
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        <action name="pagecreate" class="app.ContactActionSupport" method="actionlist">
+            <result name="success">/create.jsp</result>
+        </action>
+        
+        <action name="deleteContact" class="app.ContactActionSupport" method="action2">
+            <result name="success">/index.jsp</result>
+        </action>
+
+        <action name="editContact" class="app.ContactActionSupport" method="action4">
+            <result name="success">/update.jsp</result>
+        </action>
+        
+        <action name="updateContact" class="app.ContactActionSupport" method="action5">
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        <action name="listview" class="app.ContactActionSupport" method="action1">
+            <result name="success">/index.jsp</result>
+        </action>
+       
+    </package>
+    
+</struts>
+
+

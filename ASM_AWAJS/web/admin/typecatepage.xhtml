@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+        <title>Type</title>
+    </h:head>
+    <h:body>
+        <p:commandButton action="home.xhtml" value="Quản lý"></p:commandButton>
+        <h:form>
+            <p:commandButton action="createtype.xhtml" value="addtype" />
+        </h:form>
+        <table>
+            <thead>
+                <tr>
+                    <th><h:column><f:facet name="header">#</f:facet></h:column></th>
+                    <th><h:column><f:facet name="header">ID</f:facet></h:column></th>
+                    <th><h:column><f:facet name="header">Type</f:facet></h:column></th>
+                    <th><h:column><f:facet name="header">Edit</f:facet></h:column></th>
+                    <th><h:column><f:facet name="header">Delete</f:facet></h:column></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <p:dataTable binding="#{table}" value="#{typeBean.items}" var="p"
+                             paginator="true" rows="5"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15"
+                             >
+                    <tr>
+                        <td><p:column><h:outputText value="#{table.rowIndex+1}"></h:outputText></p:column></td>
+                        <td><p:column><h:outputText value="#{p.id}"></h:outputText></p:column></td>
+                        <td><p:column><h:outputText value="#{p.type}"></h:outputText></p:column></td>
+                        <td><p:column><p:commandButton action="#{typeBean.viewedit(p.id)}"  value="Edit"></p:commandButton></p:column></td>
+                        <td><p:column><p:commandButton action="#{typeBean.delete(p.id)}" value="Delete"></p:commandButton></p:column></td>
+                    </tr>
+                </p:dataTable>
+            </tbody>
+        </table>
+        
+    </h:body>
+</html>
+

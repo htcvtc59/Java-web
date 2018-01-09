@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <managed-bean>
+        <managed-bean-name>loginBean</managed-bean-name>
+        <managed-bean-class>app.LoginBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>newsBean</managed-bean-name>
+        <managed-bean-class>app.NewsBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>typeBean</managed-bean-name>
+        <managed-bean-class>app.TypeBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+    <navigation-rule>
+        
+        <from-view-id>/admin/typecatepage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{typeBean.viewedit(p.id)}</from-action>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/admin/updatetypepage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{typeBean.delete(p.id)}</from-action>
+            <from-outcome>11</from-outcome>
+            <to-view-id>/admin/typecatepage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/admin/updatetypepage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{typeBean.updatepro(editPro)}</from-action>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/admin/typecatepage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/admin/createtype.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{typeBean.save()}</from-action>
+            <from-outcome>111</from-outcome>
+            <to-view-id>/admin/typecatepage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/admin/createnews.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{newsBean.save()}</from-action>
+            <from-outcome>111</from-outcome>
+            <to-view-id>/admin/newspage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        
+        <from-view-id>/admin/newspage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{newsBean.viewedit(p.id)}</from-action>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/admin/updatenewspage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{newsBean.delete(p.id)}</from-action>
+            <from-outcome>11</from-outcome>
+            <to-view-id>/admin/newspage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/admin/updatenewspage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{newsBean.updatepro(editPro)}</from-action>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/admin/newspage.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule>
+        <from-view-id>/admin/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{loginBean.login()}</from-action>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/admin/home.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/admin/home.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{loginBean.logout()}</from-action>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/admin/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/home/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{newsBean.newcontent(p.id)}</from-action>
+            <from-outcome>11111</from-outcome>
+            <to-view-id>/home/home.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{newsBean.searchbyTitle()}</from-action>
+            <from-outcome>11</from-outcome>
+            <to-view-id>/home/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{newsBean.searchbyDate()}</from-action>
+            <from-outcome>111</from-outcome>
+            <to-view-id>/home/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

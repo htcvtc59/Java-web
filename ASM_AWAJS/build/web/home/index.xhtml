@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Index</title>
+        <!-- DatePicker JavaScript & CSS -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js" />
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".datepicker").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "1960:2017"
+                });
+            });
+        </script>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="Title"></h:outputLabel>
+                <h:inputText value="#{newsBean.title}"></h:inputText>
+                <h:commandButton value="SearchName" action="#{newsBean.searchbyTitle()}"></h:commandButton>
+
+                <h:outputLabel value="Date"></h:outputLabel>
+                <h:inputText styleClass="datepicker" value="#{newsBean.date}"></h:inputText>
+                <h:outputScript library="js" name="formatDatePicker.js" />
+                <h:commandButton value="SearchDate" action="#{newsBean.searchbyDate()}"></h:commandButton>
+            </h:panelGrid>
+        </h:form>
+
+
+        <c:choose>
+            <c:when test="${itemssearchList.size()>0}">
+                <h:form>
+                    <h:dataTable value="#{itemssearchList}" var="p">
+                        <h:column><h:commandLink action="#{newsBean.newcontent(p.id)}">
+                                <h:graphicImage value="#{p.image}"  height="50" width="50" />
+                            </h:commandLink></h:column>
+                        <h:column><h:outputText value="#{p.id}"></h:outputText></h:column>
+                        <h:column><h:outputText value="#{p.title}"></h:outputText></h:column>
+                    </h:dataTable>
+                </h:form>
+            </c:when>
+
+            <c:when test="${itemssearchList == null}" >
+                <h:form>
+                    <h:dataTable value="#{newsBean.items}" var="p">
+                        <h:column><h:commandLink action="#{newsBean.newcontent(p.id)}">
+                                <h:graphicImage value="#{p.image}"  height="50" width="50" />
+                            </h:commandLink></h:column>
+                        <h:column><h:outputText value="#{p.id}"></h:outputText></h:column>
+                        <h:column><h:outputText value="#{p.title}"></h:outputText></h:column>
+                    </h:dataTable>
+                </h:form> 
+            </c:when>
+
+            <c:otherwise>
+
+            </c:otherwise>
+        </c:choose>
+
+
+
+
+
+
+
+
+
+
+
+    </h:body>
+</html>
+

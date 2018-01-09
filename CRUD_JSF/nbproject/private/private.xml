@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/web/index.jsp</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/src/java/app/LoginBean.java</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/src/java/validator/LoginPassValidator.java</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/web/index.xhtml</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/src/java/app/ProductBean.java</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/web/login.jsp</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/web/home.jsp</file>
+            <file>file:/C:/Users/MacOS/Documents/NetBeansProjects/CRUD_JSF/web/update.jsp</file>
+        </group>
+    </open-files>
+</project-private>
