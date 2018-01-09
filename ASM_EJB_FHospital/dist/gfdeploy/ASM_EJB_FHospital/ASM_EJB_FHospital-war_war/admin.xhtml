@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Admin</title>
+        <link href="assets/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <script src="assets/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/jquery-ui.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".datepicker").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                });
+                $('.inputName').click(function () {
+                    $('.ADate').val('');
+                    $('.DDate').val('');
+                });
+
+                $('.ADate').click(function () {
+                    $('.inputName').val('');
+                    $('.DDate').val('');
+                });
+
+                $('.DDate').click(function () {
+                    $('.inputName').val('');
+                    $('.ADate').val('');
+                });
+            });
+        </script>
+    </h:head>
+    <h:body>
+        <div style=" display: flex; flex-direction: row;">
+            <div style="flex: auto;">
+                <f:view>
+                    <h:link value="Create Account" outcome="createaccount" />
+                    <br></br>
+                    <h:form>
+                        <h1><h:outputText value="Account"/></h1>
+                        <h:dataTable value="#{accountBean.findAll()}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Name"/>
+                                </f:facet>
+                                <h:outputText value="#{item.name}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Password"/>
+                                </f:facet>
+                                <h:outputText value="#{item.password}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Role"/>
+                                </f:facet>
+                                <h:outputText value="#{item.role}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Option</f:facet>
+                                <h:commandLink value="Delete" action="#{accountBean.delete(item)}" 
+                                               onclick="return confirm('Are you sure!')" >
+                                </h:commandLink> | 
+                                <h:commandLink value="Edit" action="#{accountBean.edit(item)}" >
+                                </h:commandLink>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+                <br></br>
+                <f:view>
+                    <h:form>
+                        <h:link value="Create Doctor" outcome="createdoctor"></h:link>
+                        <br></br>
+                        <h1><h:outputText value="Doctor"/></h1>
+                        <h:dataTable value="#{doctorBean.findAll()}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Name"/>
+                                </f:facet>
+                                <h:outputText value="#{item.name}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Specialist"/>
+                                </f:facet>
+                                <h:outputText value="#{item.specialist}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Option</f:facet>
+                                <h:commandLink value="Delete" action="#{doctorBean.delete(item)}" 
+                                               onclick="return confirm('Are you sure!')" >
+                                </h:commandLink> | 
+                                <h:commandLink value="Edit" action="#{doctorBean.edit(item)}" >
+                                </h:commandLink>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+                <br></br>
+                <f:view>
+                    <h:form>
+                        <h:link value="Create Examination" outcome="createexamination"></h:link>
+                        <br></br>
+                        <h1><h:outputText value="Examination"/></h1>
+                        <h:dataTable value="#{examinationBean.findAll()}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="AccId"/>
+                                </f:facet>
+                                <h:outputText value="#{item.accId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="DocId"/>
+                                </f:facet>
+                                <h:outputText value="#{item.docId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ADate"/>
+                                </f:facet>
+                                <h:outputText value="#{item.ADate}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="DDate"/>
+                                </f:facet>
+                                <h:outputText value="#{item.DDate}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">Option</f:facet>
+                                <h:commandLink value="Delete" action="#{examinationBean.delete(item)}" 
+                                               onclick="return confirm('Are you sure!')" >
+                                </h:commandLink> | 
+                                <h:commandLink value="Edit" action="#{examinationBean.edit(item)}" >
+                                </h:commandLink>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+            </div>
+            <div style="flex: auto;">
+                <h1>Search</h1>
+
+                <f:view>
+
+                    <h:form>
+                        <h:outputLabel value="Name:" for="inputName" />
+                        <h:inputText id="inputName" styleClass="inputName"
+                                     title="inputName" value = "#{accountBean.keyname}"/>
+                        <br></br>
+                        <h:outputLabel value="ADate:" for="ADate" />
+                        <h:inputText id="ADate" styleClass="datepicker ADate" value="#{accountBean.keyadate}" title="ADate" />
+                        <br></br>
+                        <h:outputLabel value="DDate:" for="DDate" />
+                        <h:inputText id="DDate" styleClass="datepicker DDate" value="#{accountBean.keyddate}" title="DDate" />
+                        <br></br>
+                        <h:commandButton value = "Search" action="#{accountBean.search()}">
+                        </h:commandButton>
+                        <br></br>
+
+                        <h1><h:outputText value="Account"/></h1>
+                        <h:dataTable value="#{accountBean.search()}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Name"/>
+                                </f:facet>
+                                <h:outputText value="#{item.name}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Password"/>
+                                </f:facet>
+                                <h:outputText value="#{item.password}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Role"/>
+                                </f:facet>
+                                <h:outputText value="#{item.role}"/>
+                            </h:column>
+                        </h:dataTable>
+
+                    </h:form>
+                </f:view>
+
+
+            </div>
+        </div>
+
+
+
+
+    </h:body>
+</html>
+

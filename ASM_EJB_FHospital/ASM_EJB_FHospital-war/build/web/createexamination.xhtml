@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="assets/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <script src="assets/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/jquery-ui.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".datepicker").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                });
+            });
+        </script>
+
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create Examination"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="AccId:" for="accId" />
+                    <h:selectOneMenu id="accId" value="#{examinationBean.tblExamination.accId}" title="AccId:" style="width: 173px;"> 
+                        <f:selectItems value="#{accountBean.findAll()}" var="item" 
+                                       itemValue="#{item.id}" itemLabel="#{item.name}" />
+                    </h:selectOneMenu> 
+                    <h:outputLabel value="DocId:" for="docId" />
+                    <h:selectOneMenu id="docId" value="#{examinationBean.tblExamination.docId}" title="DocId" style="width: 173px;"> 
+                        <f:selectItems value="#{doctorBean.findAll()}" var="item" 
+                                       itemValue="#{item.id}" itemLabel="#{item.name}" />
+                    </h:selectOneMenu> 
+                    <h:outputLabel value="ADate:" for="ADate" />
+                    <h:inputText id="ADate" styleClass="datepicker" value="#{examinationBean.tblExamination.ADate}" title="ADate" />
+                    <h:outputLabel value="DDate:" for="DDate" />
+                    <h:inputText id="DDate" styleClass="datepicker" value="#{examinationBean.tblExamination.DDate}" title="DDate" />
+                    <br></br>
+                    <h:commandButton action="#{examinationBean.create()}" value="Save" ></h:commandButton>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
