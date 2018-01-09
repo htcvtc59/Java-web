@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StudentList >
+    <Student StudentID="S01" Gender="Male">
+        <Name>Nguyen Van Tuyen</Name>
+        <Age>24</Age>
+    </Student>
+    <Student StudentID="S02" Gender="FeMale">
+        <Name>Nguyen Thi</Name>
+        <Age>30</Age>
+    </Student>
+    <Student StudentID="S03" Gender="Male">
+        <Name>Vip</Name>
+        <Age>20</Age>
+    </Student>
+
+</StudentList>

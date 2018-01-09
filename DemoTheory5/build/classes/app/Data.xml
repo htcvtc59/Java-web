@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<StudentList>
+    <Student>
+        <ID>A001</ID>
+        <Name>Demo</Name>
+        <Mark>13</Mark>
+        <Email>a@abc.com</Email>
+    </Student>   
+    <Student>
+        <ID>A001</ID>
+        <Name>Demo</Name>
+        <Mark>13</Mark>
+        <Email>a@abc.com</Email>
+    </Student>
+</StudentList>

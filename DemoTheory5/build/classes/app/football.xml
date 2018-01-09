@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<League TITLE="Champion League">
+    <Match Stadium="ABC" KickOff="123">        
+        <Club Name="A" Goals="3"/>
+        <Club Name="B" Goals="0"/>
+    </Match>
+    <Match Stadium="XYZ" KickOff="123">        
+        <Club Name="C" Goals="1"/>
+        <Club Name="D" Goals="0"/>
+    </Match>
+</League>

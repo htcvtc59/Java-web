@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StudentList>
+    <Student>
+        <ID>A001</ID>
+        <Name>Demo</Name>
+        <Mark>19</Mark>
+        <Email>a@abc.com</Email>
+    </Student>
+</StudentList>

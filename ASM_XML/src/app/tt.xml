@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TrangThaiThoiTiet>
+    <ThoiTiet>
+        <name>111</name>
+        <status>mua</status>
+        <date>28/11/2017</date>
+        <location>HaNoi</location>
+        <image>C/dsdsd</image>
+    </ThoiTiet>
+    <ThoiTiet>
+        <name>111</name>
+        <status>mua</status>
+        <date>28/11/2017</date>
+        <location>HaNoi</location>
+        <image>C/dsdsd</image>
+    </ThoiTiet>
+    <ThoiTiet>
+        <name>id1</name>
+        <status>nang</status>
+        <date>28/11/2017</date>
+        <location>HaNoi</location>
+        <image>C:\Users\MacOS\Documents\NetBeansProjects\ASM_XML\image\01d.png</image>
+    </ThoiTiet>
+    <ThoiTiet>
+        <name>id2</name>
+        <status>gio</status>
+        <date>28/11/2017</date>
+        <location>HCM</location>
+        <image>C:\Users\MacOS\Documents\NetBeansProjects\ASM_XML\image\01n.png</image>
+    </ThoiTiet>
+    <ThoiTiet>
+        <name>id2</name>
+        <status>gio</status>
+        <date>20/11/2017</date>
+        <location>HCM</location>
+        <image>C:\Users\MacOS\Documents\NetBeansProjects\ASM_XML\image\01n.png</image>
+    </ThoiTiet>
+</TrangThaiThoiTiet>

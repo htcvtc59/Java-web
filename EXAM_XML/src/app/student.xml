@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--This is a comment--><!--This is a comment--><students>
+    <student sex="male">
+        <name>Dinh Van Tron</name>
+        <address>Ha Nam</address>
+        <phone>0312312314</phone>
+    </student>
+    <student sex="female">
+        <name>Phan Thuy Duong</name>
+        <address>Hai Phong</address>
+        <phone>0999123334</phone>
+    </student>
+    
+    
+    
+</students>

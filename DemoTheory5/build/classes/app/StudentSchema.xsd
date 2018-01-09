@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema  elementFormDefault="qualified"  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="MarkType">
+    <xsd:restriction base="xsd:float">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="25"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EmailType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="StudentList">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Student" minOccurs="1" maxOccurs="25">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ID" type="xsd:string"/>
+              <xsd:element name="Name" type="xsd:string"/>
+              <xsd:element name="Mark" type="MarkType"/>
+              <xsd:element name="Email" type="EmailType"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>      
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

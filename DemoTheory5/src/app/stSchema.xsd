@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xsd:schema version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:simpleType name="MarkType">
+        <xsd:restriction base="xsd:float">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="25"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="EmailType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:element name="StudentList">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Student" maxOccurs="25" minOccurs="11">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="StudentID" type="xsd:int"/>
+                            <xsd:element name="StudentNam" type="xsd:string"/>
+                            <xsd:element name="mark" type="MarkType"/>
+                            <xsd:element name="email" type="EmailType"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>        
+    </xsd:element>
+</xsd:schema>

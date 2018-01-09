@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema  elementFormDefault="qualified"  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EmailType">
+       <xs:restriction base="xs:string">
+           <xs:pattern value="[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}"/>
+       </xs:restriction>       
+   </xs:simpleType>   
+   <xs:simpleType name="SttType">
+       <xs:restriction base="xs:float">
+           <xs:minInclusive value="0"/>
+           <xs:maxInclusive value="1"/>
+       </xs:restriction>
+   </xs:simpleType>   
+<xs:element name="OrderList">
+  <xs:complexType>
+    <xs:sequence>
+    <xs:element name="Customer">  
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CusID" type="xs:int"/>
+            <xs:element name="CusName" type="xs:string"/>
+            <xs:element name="CusEmail" type="EmailType"/>            
+          </xs:sequence>
+        </xs:complexType>
+        </xs:element>
+      <xs:element name="ProductOrder" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="OrderID" type="xs:string"/>
+            <xs:element name="ProductOrder" type="xs:string"/>
+            <xs:element name="OrderDate" type="xs:string"/>
+            <xs:element name="OrderStatus" type="SttType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
