@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProductList>
+    <Product>
+        <ProductID>P01</ProductID>
+        <ProductName>SP1</ProductName>
+        <Price>200</Price>
+        <Quantity>1</Quantity>
+        <Image>a.jpg</Image>
+    </Product>
+    <Product>
+        <ProductID>P02</ProductID>
+        <ProductName>SP2</ProductName>
+        <Price>100</Price>
+        <Quantity>4</Quantity>
+        <Image>b.jpg</Image>
+    </Product>
+    <Product>
+        <ProductID>P03</ProductID>
+        <ProductName>SP3</ProductName>
+        <Price>300</Price>
+        <Quantity>4</Quantity>
+        <Image>c.jpg</Image>
+    </Product>
+</ProductList>

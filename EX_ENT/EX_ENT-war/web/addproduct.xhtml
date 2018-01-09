@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="ProId:" for="proId" />
+                    <h:inputText id="proId" value="#{productBean.product.proId}" title="ProId" required="true" requiredMessage="The ProId field is required."/>
+                    <h:outputLabel value="ProdName:" for="prodName" />
+                    <h:inputText id="prodName" value="#{productBean.product.prodName}" title="ProdName" />
+                    <h:outputLabel value="ProdPrice:" for="prodPrice" />
+                    <h:inputText id="prodPrice" value="#{productBean.product.prodPrice}" title="ProdPrice" />
+                    <h:outputLabel value="ProdQuantity:" for="prodQuantity" />
+                    <h:inputText id="prodQuantity" value="#{productBean.product.prodQuantity}" title="ProdQuantity" />
+                    <br></br>
+                    <h:commandButton action="#{productBean.create()}" value="Save" ></h:commandButton>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+        
+        
+    </h:body>
+</html>
+

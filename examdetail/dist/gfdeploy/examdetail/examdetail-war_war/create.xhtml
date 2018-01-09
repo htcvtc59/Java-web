@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Examcode:" for="examcode" />
+                    <h:inputText id="examcode" value="#{examBean.tblExam.examcode}" title="Examcode" required="true" requiredMessage="The Examcode field is required."/>
+                    <h:outputLabel value="Date:" for="date" />
+                    <h:inputText id="date" value="#{examBean.tblExam.date}" title="Date" />
+                    <h:outputLabel value="Duration:" for="duration" />
+                    <h:inputText id="duration" value="#{examBean.tblExam.duration}" title="Duration" />
+                    <h:outputLabel value="Faculty:" for="faculty" />
+                    <h:selectOneMenu value="#{examBean.tblExam.faculty}">
+                        <f:selectItem itemLabel="f1" itemValue="f1"></f:selectItem>
+                        <f:selectItem itemLabel="f2" itemValue="f2"></f:selectItem>
+                        <f:selectItem itemLabel="f3" itemValue="f3"></f:selectItem>
+                    </h:selectOneMenu> 
+                    <h:outputLabel value="Subject:" for="subject" />
+                    <h:selectOneMenu value="#{examBean.tblExam.subject}">
+                        <f:selectItem itemLabel="s1" itemValue="s1"></f:selectItem>
+                        <f:selectItem itemLabel="s2" itemValue="s2"></f:selectItem>
+                        <f:selectItem itemLabel="s3" itemValue="s3"></f:selectItem>
+                    </h:selectOneMenu> 
+                    <br></br>
+                    <h:commandButton action="#{examBean.create()}" value="Save" ></h:commandButton>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+
+
+    </h:body>
+</html>
+
